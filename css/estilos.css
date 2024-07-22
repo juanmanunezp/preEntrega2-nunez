@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00000074;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.productos {
+    padding: 20px;
+}
+
+.productos h2 {
+    margin-bottom: 20px;
+}
+
+.categorias {
+    padding: 20px;
+}
+
+.categorias h2 {
+    margin-bottom: 20px;
+}
