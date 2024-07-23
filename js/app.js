@@ -61,6 +61,7 @@ function buscarProducto(idDelProducto) {
 }
 
 function agregarProducto() {
+    mostrarInventario();
     const idDelProducto = parseInt(prompt("Ingrese el ID del producto:"), 10);
     const producto = buscarProducto(idDelProducto);
 
@@ -79,23 +80,12 @@ function agregarProducto() {
             alert("Cantidad inválida. Debe ser un número entero positivo.");
         }
     } else {
-        alert(`Producto con ID ${idDelProducto} no está disponible en el inventario.`);
-    }
-}
-
-function buscarProductoPrompt() {
-    const idDelProducto = parseInt(prompt("Ingrese el ID del producto a buscar:"), 10);
-    const producto = buscarProducto(idDelProducto);
-
-    if (producto) {
-        alert(`Producto encontrado: ID: ${producto.id}, ${producto.nombre}, Precio: ${producto.precio}, Stock: ${producto.stock}`);
-    } else {
-        alert("Producto no encontrado en el inventario.");
+        alert(`Se ha producido un error. Por favor intente nuevamente`);
     }
 }
 
 function ejecutarAplicacion() {
-    mostrarInventario();
+
 
     let continuar = true;
     while (continuar) {
@@ -104,11 +94,7 @@ function ejecutarAplicacion() {
         const total = calcularPrecioTotal();
         alert(`Total a pagar: ${total}`);
 
-        continuar = confirm("¿Desea agregar más productos al carrito? (Cancelar para buscar un producto)");
-    }
-
-    if (confirm("¿Desea buscar un producto?")) {
-        buscarProductoPrompt();
+        continuar = confirm("¿Desea agregar más productos al carrito? (Cancelar para finalizar compra)");
     }
 
     alert("Resumen de la compra:\n" + carrito.map(item => `ID: ${item.id}, ${item.nombre} - Precio: ${item.precio}, Cantidad: ${item.cantidad}`).join('\n') + `\nTotal a pagar al final: ${calcularPrecioTotal()}`);
