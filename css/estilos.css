@@ -6,11 +6,18 @@ body {
 }
 
 header {
-    background-color:  #343a40;
+    background-color: #ffc107;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
-    border-bottom: 2px solid #ffc107;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ffffff;
 }
 
 .container {
@@ -82,6 +89,7 @@ nav a:hover {
 .agregar-btn {
     background-color: #ffc107;
     color: white;
+    text-shadow: 1px 1px 0 #00000050;
     border: none;
     transition: background-color 0.2s;
 }
