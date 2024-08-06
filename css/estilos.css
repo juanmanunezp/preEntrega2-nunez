@@ -8,13 +8,13 @@ body {
 header {
     background-color: #ffc107;
     color: white;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
     font-weight: bold;
     text-shadow: 1px 1px 0 #ffffff;
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color:#ffc107;
+    color: #ffc107;
 }
 
 /* productos */
@@ -143,4 +143,21 @@ nav a:hover {
     font-size: 1.2em;
     font-weight: bold;
     text-align: right;
+}
+
+#comprar-btn {
+    display: block;
+    margin: 18px 0;
+    padding: 10px 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: white;
+    cursor: pointer;
+    float: right;
+}
+
+#comprar-btn:hover {
+    background-color: #e0a800;
 }

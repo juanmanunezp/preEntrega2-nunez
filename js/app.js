@@ -56,7 +56,9 @@ function agregarAlCarrito(idDelProducto) {
                         duration: 3000,
                         gravity: "top",
                         position: "right",
-                        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)"
+                        }
                     }).showToast();
                 } else {
                     Toastify({
@@ -64,7 +66,9 @@ function agregarAlCarrito(idDelProducto) {
                         duration: 3000,
                         gravity: "top",
                         position: "right",
-                        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)"
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)"
+                        }
                     }).showToast();
                 }
             } else {
@@ -76,7 +80,9 @@ function agregarAlCarrito(idDelProducto) {
                     duration: 3000,
                     gravity: "top",
                     position: "right",
-                    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)"
+                    }
                 }).showToast();
             }
             actualizarCarrito();
@@ -86,7 +92,9 @@ function agregarAlCarrito(idDelProducto) {
                 duration: 3000,
                 gravity: "top",
                 position: "right",
-                backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)"
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)"
+                }
             }).showToast();
         }
     }
@@ -143,7 +151,6 @@ function eliminarDelCarrito(idDelProducto) {
     }
 }
 
-
 function calcularPrecioTotal() {
     return carrito.reduce((total, item) => total + parseFloat(item.precio) * item.cantidad, 0);
 }
@@ -151,4 +158,14 @@ function calcularPrecioTotal() {
 document.addEventListener('DOMContentLoaded', () => {
     mostrarInventario();
     actualizarCarrito();
+});
+
+document.getElementById('comprar-btn').addEventListener('click', () => {
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío. Añade productos antes de comprar.");
+    } else {
+        alert("¡Gracias por tu compra! Tu pedido está en proceso.");
+        carrito.length = 0;
+        actualizarCarrito();
+    }
 });
